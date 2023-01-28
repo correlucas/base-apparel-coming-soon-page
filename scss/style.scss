@@ -14,56 +14,141 @@ body {
   background-color: hsl(0, 100%, 99%);
   background-image: url(/images/bg-pattern-desktop.svg);
   background-repeat: no-repeat;
-  background-size: contain;
+  object-fit: cover;
+  background-size: 120%;
   background-position: left;
 }
 
 main {
-  // @include simpleFlex(space-between, flex-start);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 220px;
+  gap: 13.75rem;
   background-position: left;
   justify-items: end;
+
+  @include display(tablet) {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-block: 2rem;
+    gap: 1.25rem;
+    text-align: center;
+  }
 }
 
-header {
-  padding-bottom: 230px;
+.logo {
+  display: flex;
+  padding-bottom: 11.25rem;
+  @include display(tablet) {
+    display: none;
+  }
+}
+
+.logo-mobile {
+  display: none;
+  @include display(tablet) {
+    display: flex;
+    max-width: 31.25rem;
+    padding-block: 2.1875rem;
+    padding-inline: 2.1875rem;
+  }
 }
 
 article {
-  max-width: 600px;
-  padding-top: 62px;
-  padding-left: 160px;
+  max-width: 37.5rem;
+  padding-top: 3.875rem;
+  padding-left: 10rem;
+
+  @include display(tablet) {
+    display: flex;
+    flex-direction: column;
+    padding-top: unset;
+    padding-left: unset;
+    margin: 0 auto;
+    max-width: 31.25rem;
+    padding-inline: 2.1875rem;
+    padding-bottom: 12.5rem;
+  }
 }
 
 picture {
-  min-height: 100vh;
-
   img {
     height: 100vh;
     object-fit: cover;
+    @include display(tablet) {
+      height: 50vh;
+      width: 100%;
+    }
   }
 }
 
 h1 {
-  max-width: 450px;
+  max-width: 28.125rem;
   font-weight: 300;
-  font-size: 64px;
+  font-size: 4rem;
   line-height: 1.2;
+  letter-spacing: 1rem;
   text-transform: uppercase;
   color: $light-orange;
-  padding-bottom: 24px;
+  padding-bottom: 1.5rem;
   span {
     font-weight: 700;
     color: $black;
+  }
+
+  @include display(tablet) {
+    padding-top: 3.875rem;
+    font-size: 2.5rem;
   }
 }
 
 p {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 1rem;
+  line-height: 1.75rem;
   color: $light-orange;
-  padding-bottom: 40px;
+  padding-bottom: 2.5rem;
+}
+
+form,
+input {
+  all: unset;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $light-orange;
+  border: 0.0625rem solid $light-orange;
+  width: 100%;
+  border-radius: 12.5rem;
+  background-color: white;
+}
+
+button {
+  padding: 1.25rem 2.5rem;
+  border-radius: 12.5rem;
+  background: $gradient;
+  position: relative;
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 70%;
+    transition: all 0.3s ease;
+  }
+}
+
+button,
+input,
+label {
+  cursor: pointer;
+}
+
+.icon {
+  display: none;
+  position: relative;
+  right: -3.125rem;
+}
+
+#submitEmail {
+  padding-left: 1.5rem;
 }

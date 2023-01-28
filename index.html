@@ -23,21 +23,26 @@
       <p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
 
       <form id="formEmail">
-        <div>
-          <input type="text" placeholder="Email Address">
-          <img src="./images/icon-error.svg" alt="Error icon">
-        </div>
+        <label>
+          <input type="text" placeholder="Email Address" id="submitEmail">
+          <img class="icon" src="./images/icon-error.svg" alt="Error icon">
 
-        <button>
-          <img src="./images/icon-arrow.svg" alt="">
-        </button>
+
+          <button>
+            <img src="./images/icon-arrow.svg" alt="">
+          </button>
+        </label>
       </form>
     </article>
 
     <picture>
-      <source srcset="./images/hero-mobile.jpg" media="(max-width:650px)">
+      <source srcset="./images/hero-mobile.jpg" media="(max-width:900px)">
       <img src="./images/hero-desktop.jpg" alt="A female model with a light orange t-shirt">
     </picture>
+
+    <div class="logo-mobile">
+      <img src="./images/logo.svg" alt="Base Apparel logo">
+    </div>
   </main>
 
 </body>
